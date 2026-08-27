@@ -9,6 +9,6 @@ public class App {
 
         Javalin app = Javalin.create(config -> {
         }).start(7070);
-        //app.getClass("/personajes", ctx -> ctx.json(RepositorioPersonajes.obtenerTodos()));
+        app.get("/personajes", ctx -> ctx.json(RepositorioPersonajes.obtenerTodos()));
     }
 }
