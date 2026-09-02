@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Personajes</title>
+</head>
+<body>
+<ul>
+    <li th:each="personaje : ${personajesRPG}" th:text="${personaje.nombre}">Personaje</li>
+</ul>
+<form method="post" action="/personajes">
+    <input name="nombre">
+    <input name="claseRPG">
+    <input name="nivel">
+    <input name="vida">
+    <button>Enviar</button>
+</form>
+</body>
+</html>
