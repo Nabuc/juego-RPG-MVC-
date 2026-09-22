@@ -6,15 +6,20 @@
     <title>Personajes</title>
 </head>
 <body>
-<ul>
-    <li th:each="personaje : ${personajesRPG}" th:text="${personaje.nombre}">Personaje</li>
-</ul>
-<form method="post" action="/personajes">
-    <input name="nombre">
-    <input name="claseRPG">
-    <input name="nivel">
-    <input name="vida">
-    <button>Enviar</button>
-</form>
+    <h2>Lista de Personajes</h2>
+    <ul>
+        <li th:each="personaje : ${personajesRPG}"
+            th:text="|Nombre: ${personaje.nombre}, Clase: ${personaje.claseRPG}, Nivel: ${personaje.nivel}, Vida: ${personaje.vida}|">
+        </li>    </ul>
+    <form method="post" action="/personajes">
+        <input name="nombre">
+        <input name="claseRPG">
+        <input name="nivel">
+        <input name="vida">
+        <button>Enviar</button>
+    </form>
+    <div th:if="${error}" th:text="${error}" style="color: red; font-weight: bold;">
+        Aquí aparecerá el error del escudo
+    </div>
 </body>
 </html>
